@@ -23,5 +23,5 @@ traitlets==4.3.3
 virtualenv==16.2.0
 virtualenv-clone==0.5.4
 wcwidth==0.1.9
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 win-unicode-console==0.5
