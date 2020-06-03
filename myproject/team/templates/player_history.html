@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Player | History</title>
+       <style>
+          table {width:50%; border:1px solid black;}
+          th {border: 1px solid black;}
+          td {border:1px solid black; text-align:center;}
+       </style>
+
+  </head>
+  <body>
+    <h3> Player Name : {{ player_name.first_name }} {{player_name.last_name}}</h3>
+    <table>
+         {% if player.count %}
+          <tr>
+              <th >Fifty</th>
+              <th >Hundred</th>
+              <th >High Score</th>
+              <th >Total Run</th>
+          </tr>
+            {% for p in player %}
+                <tr>
+                    <td>{{p.fifty}}</td>
+                    <td>{{p.hundred}}</td>
+                    <td>{{p.high_score}}</td>
+                    <td>{{p.total_run}}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+          <p>"No records found"</p>
+        {% endif %}
+    </table>
+  </body>
+</html>

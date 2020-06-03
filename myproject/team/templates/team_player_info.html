@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Players</title>
+     <style>
+          table {width:50%; border:1px solid black;}
+          th {border: 1px solid black;}
+          td {border:1px solid black; text-align:center;}
+      </style>
+</head>
+<body>
+<h2>List Of Players</h2>
+<h3> Team Name : {{team.name}}</h3>
+    <table>
+        {% if players.count %}
+          <tr>
+              <th>Full Name</th>
+              <th>Image</th>
+          </tr>
+            {% for p in players %}
+                <tr>
+                    <!--<td><a href="/player_history/{{ p.id }}/">{{ p.first_name }} {{p.last_name}}</a></td>-->
+                    <td><a href="{% url 'players_history' p.id %}">{{ p.first_name }} {{p.last_name}}</a></td>
+                    <td><img src={{p.image_url}} width="20" height="25"></td>
+                </tr>
+            {% endfor %}
+        {% else %}
+          <p>"No records found"</p>
+        {% endif %}
+    </table>
+</body>
+</html>
